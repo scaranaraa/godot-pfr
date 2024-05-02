@@ -12,4 +12,8 @@ public partial class world : Node2D
 	public override void _Process(double delta)
 	{
 	}
+
+	public void _on_rich_text_label_ready(){
+	}
+
 }

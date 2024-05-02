@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://csa21q6kdpxhe"]
+[gd_scene load_steps=3 format=3 uid="uid://csa21q6kdpxhe"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_lvcfw"]
+[ext_resource type="PackedScene" uid="uid://daxg7ls6wyed7" path="res://BG.tscn" id="2_pa21o"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lvcfw")
@@ -20,6 +21,8 @@ offset_right = 713.0
 offset_bottom = 542.0
 tooltip_text = "Quit the game"
 text = "Quit"
+
+[node name="BG" parent="." instance=ExtResource("2_pa21o")]
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
