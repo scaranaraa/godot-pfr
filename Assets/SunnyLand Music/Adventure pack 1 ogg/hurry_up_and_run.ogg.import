@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://drsb3cp1mtrk4"
+path="res://.godot/imported/hurry_up_and_run.ogg-afd518d264027c108c16b12940c84a74.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SunnyLand Music/Adventure pack 1 ogg/hurry_up_and_run.ogg"
+dest_files=["res://.godot/imported/hurry_up_and_run.ogg-afd518d264027c108c16b12940c84a74.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
