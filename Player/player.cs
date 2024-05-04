@@ -5,7 +5,8 @@ public partial class player : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
-
+	
+	public int Health = 100;
 	public AnimationPlayer Anim;
 	public AnimatedSprite2D AnimSprite;
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -53,5 +54,14 @@ public partial class player : CharacterBody2D
 		}
 		Velocity = velocity;
 		MoveAndSlide();
+
+		if(Game.PlayerHealth <= 0){
+			Game.PlayerHealth = 100;
+			Game.PlayerGold = 0;
+			Utils.SaveGame();
+			QueueFree();
+			GetTree().ChangeSceneToFile("res://main.tscn");
+		}
+
 	}
 }

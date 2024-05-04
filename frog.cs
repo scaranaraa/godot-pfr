@@ -59,11 +59,26 @@ public const float Speed = 100.0f;
 		}
 	}
 
-	public async void _on_player_death_body_entered(Node2D body){
+	public void _on_player_death_body_entered(Node2D body){
 		if(body.Name == "Player"){
-			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Death");
-			await ToSignal(GetNode<AnimatedSprite2D>("AnimatedSprite2D"), "animation_finished");
-			this.QueueFree();
+			this.Death();
 		}
 	}
+
+	public void _on_player_collision_body_entered(Node2D body){
+		if(body.Name == "Player"){
+			Game.PlayerHealth -= 20;
+			this.Death();
+		}
+	}
+
+	public async void Death(){
+		Game.PlayerGold += 50;
+		Utils.SaveGame();
+		chase = false;
+		GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Death");
+		await ToSignal(GetNode<AnimatedSprite2D>("AnimatedSprite2D"), "animation_finished");
+		this.QueueFree();
+	}
+
 }
